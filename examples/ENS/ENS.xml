@@ -11,6 +11,7 @@
           xsi:schemaLocation="http://tokenscript.org/2020/03/tokenscript http://tokenscript.org/2020/03/tokenscript.xsd"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xmlns:asnx="urn:ietf:params:xml:ns:asnx"
+          xmlns:ethereum="urn:ethereum:constantinople"
           custodian="false"
 >
   <ts:name>
@@ -28,11 +29,11 @@
     <ts:address network="1">0xF0AD5cAd05e10572EfcEB849f6Ff0c68f9700455</ts:address>
     <asnx:module name="NameRegistered">
       <sequence>
-        <element name="name" ethereum-type="string"/>
-        <element name="label" ethereum-type="bytes32"/>
-        <element name="owner" ethereum-type="address"/>
-        <element name="cost" ethereum-type="uint"/>
-        <element name="expires" ethereum-type="uint"/>
+        <element name="ensName" ethereum:type="string"/>
+        <element name="label" ethereum:type="bytes32" ethereum:indexed="true"/>
+        <element name="owner" ethereum:type="address" ethereum:indexed="true"/>
+        <element name="cost" ethereum:type="uint"/>
+        <element name="expires" ethereum:type="uint"/>
       </sequence>
     </asnx:module>
   </ts:contract>
